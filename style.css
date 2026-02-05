@@ -1,1 +1,334 @@
-/* Add you CSS here */
+/* /* ===== Base ===== */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: #0f172a;
+  background: #0b1220;
+}
+img { max-width: 100%; display: block; }
+a { text-decoration: none; color: inherit; }
+.container { width: min(1100px, 92%); margin: 0 auto; }
+.center { text-align: center; }
+
+/* ===== Nav (updated) ===== */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  /* More color */
+  background: linear-gradient(90deg, rgba(20, 184, 166, 0.92), rgba(96, 165, 250, 0.92), rgba(168, 85, 247, 0.92));
+  backdrop-filter: blur(10px);
+
+  border-bottom: 1px solid rgba(255,255,255,0.18);
+}
+
+.nav {
+  display: flex;
+  justify-content: center;   /* centers the nav items */
+  align-items: center;
+  padding: 12px 0;
+}
+
+/* Removes bullets + forces horizontal layout */
+.nav-links {
+  list-style: none;          /* removes bullets */
+  display: flex;             /* horizontal */
+  gap: 14px;                 /* spacing between links */
+  padding-left: 0;           /* extra bullet spacing removal */
+  margin: 0;
+}
+
+.nav-links a {
+  color: #0b1220;            /* dark text looks good on the colorful bar */
+  font-weight: 900;
+  letter-spacing: 0.2px;
+
+  padding: 10px 14px;
+  border-radius: 999px;
+
+  background: rgba(255,255,255,0.75);
+  border: 1px solid rgba(255,255,255,0.40);
+
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.nav-links a:hover {
+  transform: translateY(-2px);
+  background: rgba(255,255,255,0.92);
+}
+
+
+/* ===== Hero (closer to examples: centered, bold, colorful) ===== */
+.hero {
+  position: relative;
+  min-height: 520px;
+  display: grid;
+  place-items: center;
+  background-image: url("https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1600&q=60");
+  background-size: cover;
+  background-position: center;
+}
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(900px 400px at 20% 20%, rgba(56,189,248,0.35), transparent 55%),
+    radial-gradient(900px 400px at 80% 30%, rgba(168,85,247,0.30), transparent 55%),
+    linear-gradient(to bottom, rgba(5,10,20,0.55), rgba(5,10,20,0.88));
+}
+.hero-content {
+  position: relative;
+  padding: 80px 0 40px;
+  color: #f8fafc;
+  text-align: center; /* you asked for centered text */
+}
+.profile-wrap {
+  width: 170px;
+  height: 170px;
+  margin: 0 auto 14px;
+  border-radius: 50%;
+  padding: 7px;
+  background: linear-gradient(135deg, rgba(56,189,248,0.9), rgba(168,85,247,0.9));
+  box-shadow: 0 18px 45px rgba(0,0,0,0.35);
+}
+.profile-pic {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid rgba(255,255,255,0.25);
+}
+.hero-title {
+  font-size: clamp(2.2rem, 4.5vw, 3.4rem);
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+  text-shadow: 0 12px 35px rgba(0,0,0,0.45);
+}
+.hero-subtitle {
+  max-width: 60ch;
+  margin: 0 auto 18px;
+  color: rgba(255,255,255,0.88);
+  font-size: 1.05rem;
+}
+
+/* Buttons */
+.hero-cta {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+.btn {
+  display: inline-block;
+  padding: 10px 16px;
+  border-radius: 14px;
+  font-weight: 900;
+  border: 1px solid transparent;
+  transition: transform 0.15s ease, filter 0.15s ease, background 0.15s ease;
+}
+.btn:hover { transform: translateY(-2px); }
+.btn-primary {
+  background: linear-gradient(135deg, #38bdf8, #a855f7);
+  color: #0b1220;
+}
+.btn-outline {
+  background: rgba(255,255,255,0.10);
+  border-color: rgba(255,255,255,0.22);
+  color: #ffffff;
+}
+.btn-outline:hover { background: rgba(255,255,255,0.16); }
+
+/* Hero social links */
+.hero-social {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.hero-social a {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  padding: 10px 12px;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+}
+
+/* Hero band (adds the “blocky section” feel) */
+.hero-band {
+  background: #14b8a6eb;          /* brand aqua with transparency */
+  padding: 22px 0;                /* balanced vertical padding */
+  margin: 28px 0;                 /* even space above and below the band */
+  position: relative;
+}
+
+
+.band-inner {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+.band-item {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 12px;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.95); /* light card look */
+  border: 1px solid rgba(2,6,23,0.06);
+  box-shadow: 0 8px 20px rgba(2,6,23,0.06);
+}
+.band-item i { color: #0ea5b6; }
+
+/* ===== Sections ===== */
+.section { padding: 80px 0; }
+
+.section-light {
+  background: #ffffff;
+  padding-top: 10px; /* restore normal section spacing (no overlap) */
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+.section-lead {
+  text-align: center;
+  color: #334155;
+  max-width: 70ch;
+  margin: 0 auto 22px;
+}
+
+/* Bio card like Guil: image left, text right */
+.bio-card {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 18px;
+  align-items: center;
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 18px;
+  border: 1px solid rgba(15,23,42,0.08);
+  box-shadow: 0 18px 45px rgba(2,6,23,0.12);
+}
+.bio-image img { border-radius: 14px; }
+.bio-text h3 { font-size: 1.4rem; margin-bottom: 8px; }
+.bio-text p { color: #334155; margin-bottom: 12px; }
+
+.bio-highlights {
+  display: grid;
+  gap: 10px;
+}
+.highlight {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 10px 12px;
+  border-radius: 14px;
+  background: rgba(56,189,248,0.10);
+  border: 1px solid rgba(56,189,248,0.20);
+}
+.highlight i { color: #0284c7; }
+
+/* Color band like Zackary’s horizontal blocks */
+.color-band {
+  padding: 56px 0;
+  background: linear-gradient(90deg, #14b8a6, #60a5fa, #a855f7);
+}
+.band-center { text-align: center; color: #0b1220; }
+.band-center h2 { font-size: 2rem; margin-bottom: 8px; }
+.band-center p { font-weight: 700; opacity: 0.95; }
+
+/* Skills section */
+.section-dark {
+  background: #0f2a4d;
+  color: #ffffff;
+}
+.pill-wrap {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+.pill {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.18);
+  font-weight: 800;
+}
+
+/* Skill cards: makes it feel less “simple” */
+.skill-cards {
+  margin-top: 22px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+.skill-card {
+  padding: 18px;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.10);
+  border: 1px solid rgba(255,255,255,0.16);
+  box-shadow: 0 18px 45px rgba(0,0,0,0.20);
+  transition: transform 0.15s ease, background 0.15s ease;
+  text-align: center;
+}
+.skill-card:hover {
+  transform: translateY(-3px);
+  background: rgba(255,255,255,0.14);
+}
+.skill-card i {
+  font-size: 26px;
+  margin-bottom: 10px;
+  color: #38bdf8;
+}
+.skill-card h3 { margin-bottom: 8px; }
+.skill-card p { color: rgba(255,255,255,0.85); }
+
+/* Footer */
+.footer {
+  padding: 70px 0 26px;
+  background: #070d18;
+  color: #e2e8f0;
+  border-top: 1px solid rgba(255,255,255,0.10);
+}
+.footer-title { font-size: 2rem; margin-bottom: 6px; }
+.footer-lead { color: rgba(226,232,240,0.75); margin-bottom: 18px; }
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+.footer-links a {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  padding: 10px 12px;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.10);
+}
+.footer-copy { color: rgba(226,232,240,0.65); }
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+  .band-inner { grid-template-columns: 1fr; }
+  .bio-card { grid-template-columns: 1fr; }
+  .skill-cards { grid-template-columns: 1fr; }
+}
+@media (max-width: 500px) {
+  .nav-links { display: none; }
+}

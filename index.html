@@ -1,11 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>My Personal Site</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Christopher James Lind | Portfolio</title>
+
+  <!-- Icon library (extra credit) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
-  <!-- Add your HTML content here -->
+  <!-- NAV -->
+  <header class="site-header">
+  <nav class="nav container" aria-label="Primary navigation">
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#bio">Bio</a></li>
+      <li><a href="#skills">Skills</a></li>
+
+      <!-- NEW: Projects links to GitHub profile -->
+      <li>
+        <a href="https://github.com/gettin-ai" target="_blank" rel="noopener">
+          Projects
+        </a>
+      </li>
+
+      <li><a href="#footer">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content container">
+      <div class="profile-wrap">
+        <!-- Replace with your real photo later -->
+        <img class="profile-pic" src="img/ChristopherLindheadshot.JPG" alt="Christopher James Lind">
+      </div>
+
+      <h1 class="hero-title">Christopher James Lind</h1>
+      <p class="hero-subtitle">Building modern web projects with clean design and steady progress.</p>
+
+      
+    </div>
+
+    <!-- Decorative band (helps it feel less “flat”) -->
+    <div class="hero-band">
+      <div class="container band-inner">
+        <div class="band-item">
+          <i class="fa-solid fa-bolt"></i>
+          <span><strong>Goal:</strong> Portfolio-ready projects</span>
+        </div>
+        <div class="band-item">
+          <i class="fa-solid fa-code"></i>
+          <span><strong>Focus:</strong> HTML + CSS foundations</span>
+        </div>
+        <div class="band-item">
+          <i class="fa-solid fa-arrow-trend-up"></i>
+          <span><strong>Status:</strong> Building Project #1</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BIO (white section like Guil’s Mission block) -->
+  <section id="bio" class="section section-light">
+    <div class="container">
+      <h2 class="section-title">Bio</h2>
+      <p class="section-lead">
+        This site is my living portfolio for projects from the Global Career Accelerator's Web Development for Everyone program and beyond.
+      </p>
+
+      <div class="bio-card">
+        <div class="bio-image">
+          <img
+            src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1200&q=60"
+            alt="Laptop on desk"
+          />
+        </div>
+
+        <div class="bio-text">
+  <h3>About Me</h3>
+
+  <p>
+    Hi, I’m <strong>Christopher James Lind</strong>, a web development student building a growing portfolio
+    of real-world projects. This website serves as a central hub to showcase the work I create throughout
+    my coursework and as I continue developing my skills.
+  </p>
+
+  <p>
+    Through my program, I’ve gained hands-on experience with core web technologies including HTML, CSS,
+    responsive design, and modern layout techniques. I’ve also learned how to use AI tools responsibly
+    to brainstorm ideas, troubleshoot issues, and support my coding workflow.
+  </p>
+
+  <p>
+    I value clean structure, readable code, and understanding how designs function behind the scenes.
+    My goal is to continue improving through practical projects and thoughtful iteration.
+  </p>
+</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COLOR DIVIDER BAND (Zackary-style block) -->
+  <section class="color-band">
+    <div class="container band-center">
+      <h2>My Skills</h2>
+      <p>Core skills I’m developing and strengthening with each project.</p>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="section section-dark">
+    <div class="container center">
+      <div class="pill-wrap">
+  <span class="pill"><i class="fa-solid fa-robot"></i> Practical AI Foundations for Web Dev</span>
+  <span class="pill"><i class="fa-solid fa-box"></i> CSS Box Model</span>
+  <span class="pill"><i class="fa-solid fa-code"></i> CSS Selectors & Units</span>
+  <span class="pill"><i class="fa-solid fa-layer-group"></i> Block vs. Inline Elements</span>
+  <span class="pill"><i class="fa-solid fa-laptop-code"></i> Building Real-World Sites</span>
+  <span class="pill"><i class="fa-solid fa-lightbulb"></i> AI-Assisted Design & Brainstorming</span>
+  <span class="pill"><i class="fa-solid fa-mobile-screen-button"></i> Responsive Design & Flexbox</span>
+  <span class="pill"><i class="fa-solid fa-font"></i> Fonts, Transitions & Specificity</span>
+  <span class="pill"><i class="fa-solid fa-bug"></i> Debugging with Chrome DevTools</span>
+  <span class="pill"><i class="fa-solid fa-wand-magic-sparkles"></i> Leveraging AI for Coding Support</span>
+</div>
+
+      <!-- Stand-out: colorful “skill cards” row -->
+      <div class="skill-cards">
+        <article class="skill-card">
+          <i class="fa-solid fa-layer-group"></i>
+          <h3>Clean Layout</h3>
+          <p>Modern spacing, consistent sections, readable structure.</p>
+        </article>
+        <article class="skill-card">
+          <i class="fa-solid fa-mobile-screen-button"></i>
+          <h3>Responsive</h3>
+          <p>Design that adapts from desktop to mobile screens.</p>
+        </article>
+        <article class="skill-card">
+          <i class="fa-solid fa-screwdriver-wrench"></i>
+          <h3>Iterate Fast</h3>
+          <p>Improve and refactor as I learn new techniques.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="footer" class="footer">
+    <div class="container center">
+      <h2 class="footer-title">Contact</h2>
+<p class="footer-lead">
+  Feel free to reach out or explore my work below.
+</p>
+
+      <div class="footer-links">
+  <a href="https://github.com/gettin-ai" target="_blank">
+    <i class="fa-brands fa-github"></i> GitHub Projects
+  </a>
+
+  <a href="mailto:emailchristopherlind@gmail.com">
+    <i class="fa-solid fa-envelope"></i> emailchristopherlind@gmail.com
+  </a>
+</div>
+
+      <p class="footer-copy">© 2026 Christopher James Lind</p>
+    </div>
+  </footer>
 </body>
 </html>
